@@ -1,18 +1,20 @@
-package ru.skypro.lesson_28;
+package ru.skypro.lesson_28.DAO;
+
+import ru.skypro.lesson_28.Employee;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface EmployeeDAO {
 
-    public void createEmployee(Employee employee);
+    public void addEmployee(Employee employee);
 
     public Optional<Employee> getEmployeeByID(int id);
 
     public List<Employee> getAllEmployees();
-    public void update(int id, Employee employee);
+    public void updateEmployee(Employee employee);
 
-    public void deleteEmployee(int id);
+    public void deleteEmployee(Employee employee);
 
     ///////////////
     default public void printAllEmployees() {
@@ -25,4 +27,5 @@ public interface EmployeeDAO {
             System.out.println(employee);
         }
     }
+    public Integer getIDbyEmployee(Employee employee);
 }
