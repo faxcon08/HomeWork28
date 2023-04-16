@@ -8,6 +8,22 @@ public class Employee {
     public Employee() {
 
     }
+
+    public Employee(int id, String firstName, String lastName, int age, String gender, int ciytId) {
+        this.id=id;
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.age=age;
+        this.gender=gender;
+        this.ciytId=ciytId;
+    }
+    public Employee(String firstName, String lastName, int age, String gender, int ciytId) {
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.age=age;
+        this.gender=gender;
+        this.ciytId=ciytId;
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -71,5 +87,11 @@ public class Employee {
 
     public void setCiytId(int ciytId) {
         this.ciytId = ciytId;
+    }
+    //////////////////////////////////////
+
+    @Override
+    public String toString() {
+        return "id("+id+") "+firstName+" "+lastName+" ["+age+"]"+"{"+gender+"}"+" city_id="+ciytId;
     }
 }
